@@ -31,7 +31,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 @ContextConfiguration(classes = {CategoryController.class})
 @ExtendWith(SpringExtension.class)
-public class CategoryControllerTest {
+class CategoryControllerTest {
     @Autowired
     private CategoryController categoryController;
 
@@ -42,7 +42,7 @@ public class CategoryControllerTest {
     private CategoryService categoryService;
 
     @Test
-    public void testCreateCategory() throws Exception {
+    void testCreateCategory() throws Exception {
         when(this.categoryService.findAll()).thenReturn(new ArrayList<Category>());
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
@@ -66,7 +66,7 @@ public class CategoryControllerTest {
     }
 
     @Test
-    public void testDelete() throws Exception {
+    void testDelete() throws Exception {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -85,7 +85,7 @@ public class CategoryControllerTest {
     }
 
     @Test
-    public void testGetAllCategories() throws Exception {
+    void testGetAllCategories() throws Exception {
         when(this.categoryService.findAll()).thenReturn(new ArrayList<Category>());
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
@@ -102,7 +102,7 @@ public class CategoryControllerTest {
     }
 
     @Test
-    public void testGetCategoryById() throws Exception {
+    void testGetCategoryById() throws Exception {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -122,7 +122,7 @@ public class CategoryControllerTest {
     }
 
     @Test
-    public void testUpdate() throws Exception {
+    void testUpdate() throws Exception {
         when(this.categoryService.findAll()).thenReturn(new ArrayList<Category>());
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
