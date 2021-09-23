@@ -47,7 +47,7 @@ class CategoryControllerTest {
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
         categoryResponseDTOList.add(new CategoryResponseDTO("Name"));
-        when(this.categoryMapper.categoriesToResponseDtos((java.util.List<Category>) any()))
+        when(this.categoryMapper.categoriesToResponseDtos(any()))
                 .thenReturn(categoryResponseDTOList);
 
         CategoryRequestDTO categoryRequestDTO = new CategoryRequestDTO();
@@ -90,7 +90,7 @@ class CategoryControllerTest {
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
         categoryResponseDTOList.add(new CategoryResponseDTO("Name"));
-        when(this.categoryMapper.categoriesToResponseDtos((java.util.List<Category>) any()))
+        when(this.categoryMapper.categoriesToResponseDtos(any()))
                 .thenReturn(categoryResponseDTOList);
         MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/categories");
         MockMvcBuilders.standaloneSetup(this.categoryController)
@@ -127,7 +127,7 @@ class CategoryControllerTest {
 
         ArrayList<CategoryResponseDTO> categoryResponseDTOList = new ArrayList<CategoryResponseDTO>();
         categoryResponseDTOList.add(new CategoryResponseDTO("Name"));
-        when(this.categoryMapper.categoriesToResponseDtos((java.util.List<Category>) any()))
+        when(this.categoryMapper.categoriesToResponseDtos(any()))
                 .thenReturn(categoryResponseDTOList);
 
         CategoryRequestDTO categoryRequestDTO = new CategoryRequestDTO();
