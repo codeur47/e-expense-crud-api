@@ -23,7 +23,7 @@
 			**/com/yorosoft/eexpensecrudapi/mapper/**,
 			**/com/yorosoft/eexpensecrudapi/advice/**,
 			**/com/yorosoft/eexpensecrudapi/exception/**,
-			**/com/yorosoft/eexpensecrudapi/controller/CrudController.java,
+			**/com/yorosoft/eexpensecrudapi/config/**,
 			**/com/yorosoft/eexpensecrudapi/EExpenseCrudApiApplication.java
 		</code.coverage.exclusions>
 	</properties>
