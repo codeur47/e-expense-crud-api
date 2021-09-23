@@ -1,18 +1,16 @@
 package com.yorosoft.eexpensecrudapi.model;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-public class PurchaseTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class PurchaseTest {
     @Test
-    public void testEquals() {
+    void testEquals() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -30,11 +28,11 @@ public class PurchaseTest {
         purchase.setQuantity(1);
         purchase.setDescription("The characteristics of someone or something");
         purchase.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(purchase.equals(null));
+        assertNotNull(purchase);
     }
 
     @Test
-    public void testEquals2() {
+    void testEquals2() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -56,7 +54,7 @@ public class PurchaseTest {
     }
 
     @Test
-    public void testEquals3() {
+    void testEquals3() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -74,13 +72,13 @@ public class PurchaseTest {
         purchase.setQuantity(1);
         purchase.setDescription("The characteristics of someone or something");
         purchase.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertTrue(purchase.equals(purchase));
+        assertEquals(purchase, purchase);
         int expectedHashCodeResult = purchase.hashCode();
         assertEquals(expectedHashCodeResult, purchase.hashCode());
     }
 
     @Test
-    public void testEquals4() {
+    void testEquals4() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -116,13 +114,13 @@ public class PurchaseTest {
         purchase1.setQuantity(1);
         purchase1.setDescription("The characteristics of someone or something");
         purchase1.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertTrue(purchase.equals(purchase1));
+        assertEquals(purchase, purchase1);
         int expectedHashCodeResult = purchase.hashCode();
         assertEquals(expectedHashCodeResult, purchase1.hashCode());
     }
 
     @Test
-    public void testEquals5() {
+    void testEquals5() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -158,11 +156,11 @@ public class PurchaseTest {
         purchase1.setQuantity(1);
         purchase1.setDescription("The characteristics of someone or something");
         purchase1.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(purchase.equals(purchase1));
+        assertNotEquals(purchase, purchase1);
     }
 
     @Test
-    public void testEquals6() {
+    void testEquals6() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -198,7 +196,7 @@ public class PurchaseTest {
         purchase1.setQuantity(1);
         purchase1.setDescription("The characteristics of someone or something");
         purchase1.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(purchase.equals(purchase1));
+        assertNotEquals(purchase, purchase1);
     }
 }
 

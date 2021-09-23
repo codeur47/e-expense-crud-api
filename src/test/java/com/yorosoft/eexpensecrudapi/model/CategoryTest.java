@@ -1,53 +1,51 @@
 package com.yorosoft.eexpensecrudapi.model;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
-public class CategoryTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class CategoryTest {
     @Test
-    public void testEquals() {
+    void testEquals() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
         category.setName("Name");
         category.setPurchaseList(new ArrayList<Purchase>());
         category.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(category.equals(null));
+        assertNotEquals(null, category);
     }
 
     @Test
-    public void testEquals2() {
+    void testEquals2() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
         category.setName("Name");
         category.setPurchaseList(new ArrayList<Purchase>());
         category.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(category.equals("Different type to Category"));
+        assertNotEquals("Different type to Category", category);
     }
 
     @Test
-    public void testEquals3() {
+    void testEquals3() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
         category.setName("Name");
         category.setPurchaseList(new ArrayList<Purchase>());
         category.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertTrue(category.equals(category));
+        assertEquals(category, category);
         int expectedHashCodeResult = category.hashCode();
         assertEquals(expectedHashCodeResult, category.hashCode());
     }
 
     @Test
-    public void testEquals4() {
+    void testEquals4() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -61,13 +59,13 @@ public class CategoryTest {
         category1.setName("Name");
         category1.setPurchaseList(new ArrayList<Purchase>());
         category1.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertTrue(category.equals(category1));
+        assertEquals(category, category1);
         int expectedHashCodeResult = category.hashCode();
         assertEquals(expectedHashCodeResult, category1.hashCode());
     }
 
     @Test
-    public void testEquals5() {
+    void testEquals5() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -81,11 +79,11 @@ public class CategoryTest {
         category1.setName("Name");
         category1.setPurchaseList(new ArrayList<Purchase>());
         category1.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(category.equals(category1));
+        assertNotEquals(category, category1);
     }
 
     @Test
-    public void testEquals6() {
+    void testEquals6() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -120,7 +118,7 @@ public class CategoryTest {
         category2.setName("Name");
         category2.setPurchaseList(new ArrayList<Purchase>());
         category2.setLastModifiedDate(LocalDateTime.of(1, 1, 1, 1, 1));
-        assertFalse(category1.equals(category2));
+        assertNotEquals(category1, category2);
     }
 }
 

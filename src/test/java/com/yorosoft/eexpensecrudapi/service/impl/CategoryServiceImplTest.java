@@ -27,7 +27,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ContextConfiguration(classes = {CategoryServiceImpl.class})
 @ExtendWith(SpringExtension.class)
-public class CategoryServiceImplTest {
+class CategoryServiceImplTest {
     @MockBean
     private CategoryRepository categoryRepository;
 
@@ -35,7 +35,7 @@ public class CategoryServiceImplTest {
     private CategoryServiceImpl categoryServiceImpl;
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         ArrayList<Category> categoryList = new ArrayList<Category>();
         when(this.categoryRepository.findAll()).thenReturn(categoryList);
         List<Category> actualFindAllResult = this.categoryServiceImpl.findAll();
@@ -45,7 +45,7 @@ public class CategoryServiceImplTest {
     }
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -62,7 +62,7 @@ public class CategoryServiceImplTest {
     }
 
     @Test
-    public void testSave() {
+    void testSave() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -83,7 +83,7 @@ public class CategoryServiceImplTest {
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         doNothing().when(this.categoryRepository).deleteById((Long) any());
         this.categoryServiceImpl.delete(123L);
         verify(this.categoryRepository).deleteById((Long) any());
@@ -91,7 +91,7 @@ public class CategoryServiceImplTest {
     }
 
     @Test
-    public void testUpdate() {
+    void testUpdate() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);

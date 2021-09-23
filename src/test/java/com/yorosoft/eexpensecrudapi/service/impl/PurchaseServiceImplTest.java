@@ -28,7 +28,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ContextConfiguration(classes = {PurchaseServiceImpl.class})
 @ExtendWith(SpringExtension.class)
-public class PurchaseServiceImplTest {
+class PurchaseServiceImplTest {
     @MockBean
     private PurchaseRepository purchaseRepository;
 
@@ -36,7 +36,7 @@ public class PurchaseServiceImplTest {
     private PurchaseServiceImpl purchaseServiceImpl;
 
     @Test
-    public void testFindAll() {
+    void testFindAll() {
         ArrayList<Purchase> purchaseList = new ArrayList<Purchase>();
         when(this.purchaseRepository.findAll()).thenReturn(purchaseList);
         List<Purchase> actualFindAllResult = this.purchaseServiceImpl.findAll();
@@ -46,7 +46,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testFindAll2() {
+    void testFindAll2() {
         ArrayList<Purchase> purchaseList = new ArrayList<Purchase>();
         when(this.purchaseRepository.findAll()).thenReturn(purchaseList);
         List<Purchase> actualFindAllResult = this.purchaseServiceImpl.findAll();
@@ -56,7 +56,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testFindAll3() {
+    void testFindAll3() {
         ArrayList<Purchase> purchaseList = new ArrayList<Purchase>();
         when(this.purchaseRepository.findAll()).thenReturn(purchaseList);
         List<Purchase> actualFindAllResult = this.purchaseServiceImpl.findAll();
@@ -66,7 +66,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testFindById() {
+    void testFindById() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -97,7 +97,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testFindById2() {
+    void testFindById2() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -128,7 +128,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testFindById3() {
+    void testFindById3() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -159,7 +159,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testSave() {
+    void testSave() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -205,7 +205,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testSave2() {
+    void testSave2() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -251,7 +251,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testSave3() {
+    void testSave3() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -297,7 +297,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testDelete() {
+    void testDelete() {
         doNothing().when(this.purchaseRepository).deleteById((Long) any());
         this.purchaseServiceImpl.delete(123L);
         verify(this.purchaseRepository).deleteById((Long) any());
@@ -305,7 +305,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testDelete2() {
+    void testDelete2() {
         doNothing().when(this.purchaseRepository).deleteById((Long) any());
         this.purchaseServiceImpl.delete(123L);
         verify(this.purchaseRepository).deleteById((Long) any());
@@ -313,7 +313,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testDelete3() {
+    void testDelete3() {
         doNothing().when(this.purchaseRepository).deleteById((Long) any());
         this.purchaseServiceImpl.delete(123L);
         verify(this.purchaseRepository).deleteById((Long) any());
@@ -321,7 +321,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testUpdate() {
+    void testUpdate() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -388,7 +388,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testUpdate2() {
+    void testUpdate2() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);
@@ -455,7 +455,7 @@ public class PurchaseServiceImplTest {
     }
 
     @Test
-    public void testUpdate3() {
+    void testUpdate3() {
         Category category = new Category();
         category.setCreatedDate(LocalDateTime.of(1, 1, 1, 1, 1));
         category.setId(123L);

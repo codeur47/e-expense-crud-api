@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 import org.junit.jupiter.api.Test;
 
-public class ResourceNotFoundExceptionTest {
+class ResourceNotFoundExceptionTest {
     @Test
-    public void testConstructor() {
+    void testConstructor() {
         ResourceNotFoundException actualResourceNotFoundException = new ResourceNotFoundException();
         assertNull(actualResourceNotFoundException.getCause());
         assertEquals("com.yorosoft.eexpensecrudapi.exception.ResourceNotFoundException: Could not find resource.",
@@ -18,7 +18,7 @@ public class ResourceNotFoundExceptionTest {
     }
 
     @Test
-    public void testConstructor2() {
+    void testConstructor2() {
         ResourceNotFoundException actualResourceNotFoundException = new ResourceNotFoundException(123L);
         assertNull(actualResourceNotFoundException.getCause());
         assertEquals("com.yorosoft.eexpensecrudapi.exception.ResourceNotFoundException: Could not find resource 123.",
